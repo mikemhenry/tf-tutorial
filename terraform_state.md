@@ -62,12 +62,12 @@ To keep the state bucket's name out of a public repository, we will use an envir
 
 ```
 export TF_STATE_BUCKET=BUCKET-NAME-YOU-PICKED
-terraform init -backend-config="bucket=$TF_STATE_BUCKET"
+tofu init -backend-config="bucket=$TF_STATE_BUCKET"
 ```
 
-```
 You will then get a message that looks like this:
 
+```
 Do you want to copy existing state to the new backend?
   Pre-existing state was found while migrating the previous "local" backend to the
   newly configured "s3" backend. No existing state was found in the newly
