@@ -78,4 +78,4 @@ Do you want to copy existing state to the new backend?
 Type "yes" to migrate your local tfstate file to the cloud.
 
 Now when you run `aws s3 ls` you should see 2 buckets listed.
-One bucket should be the name of the bucket you are using to track the sate file, and the other bucket name should be the one you created with your modified `main.tf` file.
+One bucket should be the name of the bucket you are using to track the state file, and the other bucket name should be the one you created with your modified `main.tf` file.
