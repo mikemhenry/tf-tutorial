@@ -17,6 +17,7 @@ directory and running `tofu plan -out tfplan` and `tofu apply tfplan`. Remember
 that Terraform uses all the `.tf` files in the current directory, but not in
 subdirectories. Be sure to remember the name you choose for the bucket, we will need it later
 to tell terraform where to find our state file.
+You will also need the aws region and you can use the `tofu show` command which will print out the aws region that the bucket is in.
 
 To use that configuration as our backend, we need to configure the `terraform`
 block in our `main.tf` file. Change the existing block to something like this:
