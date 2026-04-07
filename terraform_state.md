@@ -59,11 +59,13 @@ Terraform. That's because some information (in our case, the bucket name) is
 potentially sensitive and shouldn't be kept in a public repository. 
 
 To keep the state bucket's name out of a public repository, we will use an environmental variable `TF_STATE_BUCKET` that we can pass into our `terraform init command`:
+Note, this is just one way to pass this information in, you can also pass in an HCL file that has the backend bucket name.
 
 ```
 export TF_STATE_BUCKET=BUCKET-NAME-YOU-PICKED
 tofu init -backend-config="bucket=$TF_STATE_BUCKET"
 ```
+
 
 You will then get a message that looks like this:
 
@@ -79,3 +81,4 @@ Type "yes" to migrate your local tfstate file to the cloud.
 
 Now when you run `aws s3 ls` you should see 2 buckets listed.
 One bucket should be the name of the bucket you are using to track the state file, and the other bucket name should be the one you created with your modified `main.tf` file.
+You don't need to pass the environmental variable in for future commands since it will store the backend information in the `.terraform/` directory.
